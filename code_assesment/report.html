@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hotel Booking Cancellation A/B Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; background: #f6f7fb; color: #1e2430; }
+    h1, h2 { margin-bottom: 0.5rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .card { background: white; border-radius: 12px; padding: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.06); margin-bottom: 1.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
+    img { width: 100%; height: auto; border-radius: 8px; border: 1px solid #dfe3eb; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #dfe3eb; padding: 0.6rem; text-align: left; }
+    th { background: #eef2ff; }
+    .stat { margin: 0.5rem 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Hotel Booking Cancellation Prediction A/B Test</h1>
+
+    <div class="card">
+      <h2>Summary</h2>
+      <p class="stat"><strong>Mean accuracy difference:</strong> +0.0825</p>
+      <p class="stat"><strong>Paired t-statistic:</strong> 32.7608</p>
+      <p class="stat"><strong>One-sided p-value:</strong> 0.000003</p>
+      <p class="stat"><strong>Bootstrap 95% CI:</strong> [0.0779, 0.0864]</p>
+      <p class="stat"><strong>Significant at 0.05:</strong> true</p>
+    </div>
+
+    <div class="card">
+      <h2>CV metric comparison</h2>
+      <table>
+        <thead>
+          <tr><th>Metric</th><th>Baseline</th><th>Proposed</th><th>Delta</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Accuracy</td><td>0.7949</td><td>0.8774</td><td>+0.0825</td></tr><tr><td>Precision</td><td>0.9611</td><td>0.8542</td><td>-0.1069</td></tr><tr><td>Recall</td><td>0.4652</td><td>0.8067</td><td>+0.3415</td></tr><tr><td>F1</td><td>0.6269</td><td>0.8298</td><td>+0.2029</td></tr><tr><td>ROC-AUC</td><td>0.8956</td><td>0.9507</td><td>+0.0551</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid">
+      <div class="card"><h2>Metric comparison</h2><img src="chart_metrics.png" alt="Metric comparison chart" /></div>
+      <div class="card"><h2>Per-fold accuracy</h2><img src="chart_boxplot.png" alt="Per-fold accuracy box plot" /></div>
+      <div class="card"><h2>Bootstrap difference</h2><img src="chart_bootstrap.png" alt="Bootstrap distribution" /></div>
+      <div class="card"><h2>Precision / recall trade-off</h2><img src="chart_pr_tradeoff.png" alt="Precision recall tradeoff" /></div>
+    </div>
+  </div>
+</body>
+</html>
